@@ -33,14 +33,14 @@ public class DAO {
 //    private final String URL2 = "jdbc:sqlserver://localhost;databaseName=PortalProvNac";
 //    private final String PASS = "dmsis2019*#";
 //    private final String PASS2 = "dmsis2019*#";
-//    private final String URL = "jdbc:sqlserver://DESKTOP-NIHO3DH\\SQLEXPRESS;databaseName=SAE70Empre01D";
-//    private final String URL2 = "jdbc:sqlserver://DESKTOP-NIHO3DH\\SQLEXPRESS;databaseName=PortalProvNac";
-//    private final String PASS = "bacros";
-//    private final String PASS2 = "bacros";
-    private final String URL = "jdbc:sqlserver://localhost;databaseName=SAE70Empre01";
-    private final String URL2 = "jdbc:sqlserver://localhost;databaseName=PortalProvNac";
-    private final String PASS = "dmsis2019*#";
-    private final String PASS2 = "dmsis2019*#";
+    private final String URL = "jdbc:sqlserver://DESKTOP-NIHO3DH\\SQLEXPRESS;databaseName=SAE70Empre01D";
+    private final String URL2 = "jdbc:sqlserver://DESKTOP-NIHO3DH\\SQLEXPRESS;databaseName=PortalProvNac";
+    private final String PASS = "bacros";
+    private final String PASS2 = "bacros";
+//    private final String URL = "jdbc:sqlserver://localhost;databaseName=SAE70Empre01";
+//    private final String URL2 = "jdbc:sqlserver://localhost;databaseName=PortalProvNac";
+//    private final String PASS = "dmsis2019*#";
+//    private final String PASS2 = "dmsis2019*#";
     private final String USERNAME = "sa";
 
     public void Conectar() {

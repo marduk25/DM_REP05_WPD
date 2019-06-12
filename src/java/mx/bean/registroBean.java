@@ -223,7 +223,7 @@ public class registroBean extends DAO implements Serializable {
         props.put("mail.smtp.host", "smtp.alestraune.net.mx");
         props.setProperty("mail.smtp.starttls.enable", "true");
         props.setProperty("mail.smtp.port", "587");
-        props.setProperty("mail.smtp.user", "proveedor@duche.com");
+        props.setProperty("mail.smtp.user", "portalproveedores@duche.com");
         props.setProperty("mail.smtp.auth", "true");
         Session session = Session.getDefaultInstance(props, null);
         session.setDebug(false);
@@ -270,7 +270,7 @@ public class registroBean extends DAO implements Serializable {
         MimeMessage message = new MimeMessage(session);
 
 // Se rellena el From
-        message.setFrom(new InternetAddress("proveedor@duche.com"));
+        message.setFrom(new InternetAddress("portalproveedores@duche.com"));
 
 // Se rellenan los destinatarios
         message.addRecipients(Message.RecipientType.TO, this.correo);
@@ -283,7 +283,7 @@ public class registroBean extends DAO implements Serializable {
         message.setContent(multiParte);
 
         Transport t = session.getTransport("smtp");
-        t.connect("proveedor@duche.com", "turtle");
+        t.connect("portalproveedores@duche.com", "ML310gen11");
         t.sendMessage(message, message.getAllRecipients());
         t.close();
     }
