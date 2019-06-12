@@ -124,14 +124,14 @@
                 <p:panel id="pnl2">
                     <p:panelGrid id="pnlGrid2" columns="2" style="margin: 0 auto; width: 400px; height: 200px; text-align: right">
                         <p:outputLabel for="correo2" value="CORREO DE LA CUENTA"></p:outputLabel>
-                        <p:inputText id="correo2" style="width: 220px; height: 30px; color: #FFFFFF; background-color: #C6FA04" validatorMessage="Correo inválido" value="#{resetearPassBean.correo}"
+                        <p:inputText id="correo2" style="width: 220px; height: 30px; color: #FFFFFF; background-color: #3C575F" validatorMessage="Correo inválido" value="#{resetearPassBean.correo}"
                                      required="true" requiredMessage="Correo requerido" label="Correo requerido" placeholder="Ingrese su e-mail">
                             <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" ></f:validateRegex>
                             <p:message for="correo2"></p:message>
                         </p:inputText>
 
                         <p:outputLabel for="rfc2" value="RFC"></p:outputLabel>
-                        <p:inputText id="rfc2" style="width: 220px; height: 30px; color: #FFFFFF; background-color: #C6FA04" value="#{resetearPassBean.rfc}"
+                        <p:inputText id="rfc2" style="width: 220px; height: 30px; color: #FFFFFF; background-color: #3C575F" value="#{resetearPassBean.rfc}"
                                      required="true" requiredMessage="RFC requerido" label="RFC requerido" placeholder="Ingrese su RFC" onkeyup="javascript:this.value = this.value.toUpperCase();">
                             <p:message for="rfc2"></p:message>
                         </p:inputText>

@@ -134,7 +134,7 @@ public class resetearPassBean extends DAO implements Serializable {
 
         MimeMultipart multiParte = new MimeMultipart();
         BodyPart imagen = new MimeBodyPart();
-        DataSource fds = new FileDataSource("C:\\img\\duche.jpg");
+        DataSource fds = new FileDataSource("C:\\img\\duche.png");
 
         imagen.setDataHandler(new DataHandler(fds));
         imagen.setHeader("Content-ID", "<image>");

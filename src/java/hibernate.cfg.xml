@@ -3,12 +3,12 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
-<!--        <property name="hibernate.connection.url">jdbc:sqlserver://FTP-DUCHE;databaseName=PortalProvNac</property>
+        <property name="hibernate.connection.url">jdbc:sqlserver://FTP-DUCHE;databaseName=PortalProvNac</property>
         <property name="hibernate.connection.username">sa</property>
-        <property name="hibernate.connection.password">vxml}}2014</property>-->
-        <property name="hibernate.connection.url">jdbc:sqlserver://DESKTOP-NIHO3DH\SQLEXPRESS;databaseName=PortalProvNac</property>
+        <property name="hibernate.connection.password">vxml}}2014</property>
+<!--        <property name="hibernate.connection.url">jdbc:sqlserver://DESKTOP-NIHO3DH\SQLEXPRESS;databaseName=PortalProvNac</property>
         <property name="hibernate.connection.username">sa</property>
-        <property name="hibernate.connection.password">bacros</property>
+        <property name="hibernate.connection.password">bacros</property>-->
 <!--            <property name="hibernate.connection.url">jdbc:sqlserver://DESKTOP-4Q0VSGP\SQLEXPRESS;databaseName=PortalProvNac</property>
         <property name="hibernate.connection.username">sa</property>
         <property name="hibernate.connection.password">dmsistemas</property>-->
