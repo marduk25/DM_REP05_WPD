@@ -180,10 +180,10 @@ public class SubirComplementoGtoBean extends DAO implements Serializable {
     private int tamcadena;
     private String condPago;
     //variables para el CFDI
-    private final String ruta = "/home/dmsistemas/Escritorio/public/dir1/";
-    private final String rutaIp = "/home/dmsistemas/Escritorio/public/dir2/";
-//    private final String ruta = "E:\\public\\comprobantesgastos\\";
-//    private final String rutaIp = "E:\\newPublic\\comprobantesgastos\\";
+//    private final String ruta = "/home/dmsistemas/Escritorio/public/dir1/";
+//    private final String rutaIp = "/home/dmsistemas/Escritorio/public/dir2/";
+    private final String ruta = "E:\\public\\comprobantesgastos\\";
+    private final String rutaIp = "E:\\newPublic\\comprobantesgastos\\";
     private List<String> lista;
     private List<String> listaDoctoRel;
     private String miUUID;
@@ -1404,7 +1404,7 @@ public class SubirComplementoGtoBean extends DAO implements Serializable {
             insertarConceptoPago();
             insertarCamposPago();
 
-//            generarPDF();
+            generarPDF();
             //enviarAviso();
         } else {
             if (!this.rfcR.equals("CDU590909BQ3")) {
@@ -1807,14 +1807,14 @@ public class SubirComplementoGtoBean extends DAO implements Serializable {
             this.uuid = this.UUIDTF;
             Map parameter = new HashMap();
             parameter.put("uuid", uuid);
-            URL in = this.getClass().getResource("/mx/facturaJasper/facturaGastosPDF.jasper");
+            URL in = this.getClass().getResource("/mx/facturaJasper/facturaComp.jasper");
             jasperReport = (JasperReport) JRLoader.loadObject(in);
             //se procesa el archivo jasper
             jasperPrint = JasperFillManager.fillReport(jasperReport, parameter, this.getCnprov());
             //se crea el archivo PDF
 
-            JasperExportManager.exportReportToPdfFile(jasperPrint, "E:\\public\\gastos\\" + us.getRfc() + "\\" + año + "\\" + mes + "\\" + nombreCFDI.substring(0, this.nombreCFDI.length() - 4) + ".pdf");
-            JasperExportManager.exportReportToPdfFile(jasperPrint, "E:\\newPublic\\gastos\\" + us.getRfc() + "\\" + año + "\\" + mes + "\\" + nombreCFDI.substring(0, this.nombreCFDI.length() - 4) + ".pdf");
+            JasperExportManager.exportReportToPdfFile(jasperPrint, "E:\\public\\comprobantesgastos\\" + us.getRfc() + "\\" + año + "\\" + mes + "\\" + nombreCFDI.substring(0, this.nombreCFDI.length() - 4) + ".pdf");
+            JasperExportManager.exportReportToPdfFile(jasperPrint, "E:\\newPublic\\comprobantesgastos\\" + us.getRfc() + "\\" + año + "\\" + mes + "\\" + nombreCFDI.substring(0, this.nombreCFDI.length() - 4) + ".pdf");
         } catch (JRException ex) {
             System.err.println("Error iReport: " + ex.getMessage());
         }
