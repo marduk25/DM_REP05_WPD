@@ -18,7 +18,7 @@
             </ui:define>
 
             <ui:define name="content">
-                <h2>ADMINISTRACIÓN DE FACTURAS</h2> 
+                <h3 style="color: #FFFFFF">ADMINISTRACIÓN DE FACTURAS</h3> 
                 <!--Formulario para buscar número de referencia-->
                 <h:form>
                     <p:outputLabel style="color: #FFFFFF !important; font-weight: bold; font-size: 15px" value="Sesión iniciada: #{loginBean.usuario.correo}"/><br></br> 
@@ -59,7 +59,7 @@
                     <p:growl id="mensaje" showSummary="true" showDetail="true"></p:growl>
                     <p:panel id="pnlPrincipal" header="" style="margin: 0 auto; text-align: center; font-size: 13px">
                         <h:commandLink id="xls">
-                            <p:graphicImage url="../Images/excel.png" width="30"/>
+                            <p:graphicImage url="../Images/excel.png" width="120"/>
                             <p:dataExporter type="xls" target="tblPrincipal" fileName="Proveedores"></p:dataExporter>
                         </h:commandLink>
                         <p:layoutUnit id="tablaPrincipal" position="center" style="padding: 5px; text-align: center;">
@@ -69,30 +69,39 @@
                                 <p:column  headerText="RFC">
                                     <h:outputText value="#{tbl.rfcE}"></h:outputText>
                                 </p:column>
-                                <p:column filterBy="#{tbl.factura}" sortBy="#{tbl.factura}" headerText="No. factura">
+                                <p:column filterBy="#{tbl.nombreE}" sortBy="#{tbl.nombreE}" headerText="NOMBRE">
+                                    <h:outputText value="#{tbl.nombreE}"></h:outputText>
+                                </p:column>
+                                <p:column filterBy="#{tbl.factura}" sortBy="#{tbl.factura}" headerText="NO. FACTURA">
                                     <h:outputText value="#{tbl.factura}"></h:outputText>
                                 </p:column>
-                                <p:column  headerText="Fecha factura">
+                                <p:column  headerText="FECHA FACTURA">
                                     <h:outputText value="#{tbl.fecha}"></h:outputText>
                                 </p:column>
-                                <p:column headerText="$ Total a pagar">
+                                <p:column  headerText="UUID FACTURA">
+                                    <h:outputText value="#{tbl.uuid}"></h:outputText>
+                                </p:column>
+                                <p:column  headerText="UUID COMPROBANTE">
+                                    <h:outputText value="#{tbl.uuidrel}"></h:outputText>
+                                </p:column>
+                                <p:column headerText="$ TOTAL A PAGAR">
                                     <h:outputText value="#{tbl.total}">
                                         <f:convertNumber currencySymbol="$" type="currency"></f:convertNumber>
                                     </h:outputText>
                                 </p:column>
-                                <p:column filterBy="#{tbl.referencia}" sortBy="#{tbl.referencia}"  headerText="No. recepción">
+                                <p:column filterBy="#{tbl.referencia}" sortBy="#{tbl.referencia}"  headerText="NO. RECEPCIÓN">
                                     <h:outputText value="#{tbl.referencia}"></h:outputText>
                                 </p:column>
-                                <p:column filterBy="#{tbl.foliowcxp}" sortBy="#{tbl.foliowcxp}" headerText="Folio WCXP">
+                                <p:column filterBy="#{tbl.foliowcxp}" sortBy="#{tbl.foliowcxp}" headerText="WCXP">
                                     <h:outputText value="WCXP#{tbl.foliowcxp}"></h:outputText>
                                 </p:column>
-                                <p:column  headerText="Fecha recepción">
+                                <p:column  headerText="FECHA DE RECEPCIÓN">
                                     <h:outputText value="#{tbl.fechaRecepcion.substring(0,19)}"></h:outputText>
                                 </p:column>
-                                <p:column  headerText="Fecha probable de pago">
+                                <p:column  headerText="FECHA PROBABLE DE PAGO">
                                     <h:outputText value="#{tbl.fechaPago}"></h:outputText>
                                 </p:column>
-                                <p:column filterBy="#{tbl.estatus}" sortBy="#{tbl.estatus}" headerText="Estatus">
+                                <p:column filterBy="#{tbl.estatus}" sortBy="#{tbl.estatus}" headerText="ESTATUS">
                                     <h:outputText value="#{tbl.estatus}"></h:outputText>
                                 </p:column>
                                 <p:column filterBy="#{tbl.estatusCom}" sortBy="#{tbl.estatusCom}" headerText="COMPLEMENTO">
@@ -213,13 +222,14 @@
                                          effect="blind" effectDuration="13000" pages="2" showOn="button" 
                                          style="width: 150px;" value="#{filterByBean.filterFec1}" 
                                          required="true" placeholder="Ingrese fecha inicial"
-                                         pattern="yyyy-MMMM-dd" mask="true">
-                            </p:calendar>                   
+                                         pattern="yyyy-MM-dd" mask="true">
+                            </p:calendar>   
+                              <p:outputLabel value="Fecha final" ></p:outputLabel>
                             <p:calendar  id="fecha_final" yearRange="2014:2025"  
                                          effect="blind" effectDuration="13000" pages="2" showOn="button" 
                                          style="width: 150px;" value="#{filterByBean.filterFec2}" 
                                          required="true" placeholder="Ingrese fecha final"
-                                         pattern="yyyy-MMMM-dd" mask="true">
+                                         pattern="yyyy-MM-dd" mask="true">
                             </p:calendar>                   
                         </p:panelGrid><br></br>
                         <p:spacer width="140px" height="5px"></p:spacer>
@@ -247,13 +257,14 @@
                                          effect="blind" effectDuration="13000" pages="2" showOn="button" 
                                          style="width: 150px;" value="#{filterByBean.filterFec3}" 
                                          required="true" placeholder="Ingrese fecha inicial"
-                                         pattern="yyyy-MMMM-dd" mask="true">
-                            </p:calendar>                   
+                                         pattern="yyyy-MM-dd" mask="true">
+                            </p:calendar> 
+                              <p:outputLabel value="Fecha final" ></p:outputLabel>
                             <p:calendar  id="fecha_fin" yearRange="2014:2025"  
                                          effect="blind" effectDuration="13000" pages="2" showOn="button" 
                                          style="width: 150px;" value="#{filterByBean.filterFec4}" 
                                          required="true" placeholder="Ingrese fecha final"
-                                         pattern="yyyy-MMMM-dd" mask="true">
+                                         pattern="yyyy-MM-dd" mask="true">
                             </p:calendar>                   
                         </p:panelGrid><br></br>
                         <p:spacer width="140px" height="5px"></p:spacer>

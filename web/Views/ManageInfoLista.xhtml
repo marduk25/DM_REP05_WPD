@@ -17,7 +17,8 @@
             </ui:define>
 
             <ui:define name="content">
-                <h2>ADMINISTRACIÓN DE FACTURAS DE PROVEEDORES, ÚLTIMAS 500 RECEPCIONES</h2> 
+                <h3 style="color: #FFFFFF">ADMINISTRACIÓN DE FACTURAS DE PROVEEDORES</h3> 
+                <h3 style="color: #FFFFFF">ÚLTIMAS 500 RECEPCIONES</h3> 
                 <!--Formulario para buscar número de referencia-->
                 <h:form>
                     <p:outputLabel style="color: #FFFFFF !important; font-weight: bold; font-size: 15px" value="Sesión iniciada: #{loginBean.usuario.correo}"/><br></br> 
@@ -69,30 +70,36 @@
                                 <p:column filterBy="#{tbl.nombreE}" sortBy="#{tbl.nombreE}" headerText="NOMBRE">
                                     <h:outputText value="#{tbl.nombreE}"></h:outputText>
                                 </p:column>
-                                <p:column filterBy="#{tbl.factura}" sortBy="#{tbl.factura}" headerText="No. factura">
+                                <p:column filterBy="#{tbl.factura}" sortBy="#{tbl.factura}" headerText="NO.FACTURA">
                                     <h:outputText value="#{tbl.factura}"></h:outputText>
                                 </p:column>
-                                <p:column  headerText="Fecha factura">
+                                <p:column  headerText="FECHA FACTURA">
                                     <h:outputText value="#{tbl.fecha}"></h:outputText>
                                 </p:column>
-                                <p:column headerText="$ Total a pagar">
+                                <p:column  headerText="UUID FACTURA">
+                                    <h:outputText value="#{tbl.uuid}"></h:outputText>
+                                </p:column>
+                                <p:column  headerText="UUID COMPROBANTE">
+                                    <h:outputText value="#{tbl.uuidrel}"></h:outputText>
+                                </p:column>
+                                <p:column headerText="$ TOTAL A PAGAR">
                                     <h:outputText value="#{tbl.total}">
                                         <f:convertNumber currencySymbol="$" type="currency"></f:convertNumber>
                                     </h:outputText>
                                 </p:column>
-                                <p:column filterBy="#{tbl.referencia}" sortBy="#{tbl.referencia}"  headerText="No. recepción">
+                                <p:column filterBy="#{tbl.referencia}" sortBy="#{tbl.referencia}"  headerText="NO. RECEPCIÓN">
                                     <h:outputText value="#{tbl.referencia}"></h:outputText>
                                 </p:column>
-                                <p:column filterBy="#{tbl.foliowcxp}" sortBy="#{tbl.foliowcxp}" headerText="Folio WCXP">
+                                <p:column filterBy="#{tbl.foliowcxp}" sortBy="#{tbl.foliowcxp}" headerText="WCXP">
                                     <h:outputText value="WCXP#{tbl.foliowcxp}"></h:outputText>
                                 </p:column>
-                                <p:column  headerText="Fecha recepción">
+                                <p:column  headerText="FECHA DE RECEPCIÓN">
                                     <h:outputText value="#{tbl.fechaRecepcion.substring(0,19)}"></h:outputText>
                                 </p:column>
-                                <p:column  headerText="Fecha probable de pago">
+                                <p:column  headerText="FECHA PROBABLE DE PAGO">
                                     <h:outputText value="#{tbl.fechaPago}"></h:outputText>
                                 </p:column>
-                                <p:column filterBy="#{tbl.estatus}" sortBy="#{tbl.estatus}" headerText="Estatus">
+                                <p:column filterBy="#{tbl.estatus}" sortBy="#{tbl.estatus}" headerText="ESTATUS">
                                     <h:outputText value="#{tbl.estatus}"></h:outputText>
                                 </p:column>
                                 <p:column filterBy="#{tbl.estatusCom}" sortBy="#{tbl.estatusCom}" headerText="COMPLEMENTO">

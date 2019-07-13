@@ -76,7 +76,7 @@
 }
 
 #top a:link:hover, #top a:visited:hover  {
-    background-color: #C6FA04;
+    background-color: #888;
     color: #000033;
     font-weight : bold;
     text-decoration : none;
